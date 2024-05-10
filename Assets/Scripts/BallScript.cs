@@ -8,11 +8,15 @@ public class BallScript : MonoBehaviour
     public Transform Player;
     public float Speed;
     public Image HealthBar;
-    
+    Vector3 desiredPosition;
+
+
 
     private void Start()
     {
        Player=GameObject.Find("Player").transform;
+
+
     }
     void Update()
     {

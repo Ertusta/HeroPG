@@ -305,6 +305,7 @@ public class DialogueScript : MonoBehaviour
             Panel.SetActive(false);
             heal = 4;
             PlayerScript.Instance.canMove = true;
+            BadButton.SetActive(false);
         }
         else if (heal == 4)
         {
@@ -315,7 +316,7 @@ public class DialogueScript : MonoBehaviour
         }
         else if (heal == 5)
         {
-            if (PlayerScript.Instance.Money >= 20)
+            if (PlayerScript.Instance.Money >= 5)
             {
 
                 PlayerScript.Instance.Money -= 5;
@@ -329,6 +330,7 @@ public class DialogueScript : MonoBehaviour
                 HealerButton.SetActive(false);
                 Panel.SetActive(false);
                 PlayerScript.Instance.canMove = true;
+                BadButton.SetActive(false);
 
             }
             else
