@@ -620,4 +620,22 @@ public class DialogueScript : MonoBehaviour
     }
 
 
+
+    public void Reset0()
+    {
+
+
+        PlayerPrefs.SetInt("execute", 0);
+        PlayerPrefs.SetInt("smith", 0);
+        PlayerPrefs.SetInt("heal", 0);
+        PlayerPrefs.SetInt("guard", 0);
+        PlayerPrefs.SetInt("seller", 0);
+        PlayerPrefs.SetInt("warriorCounter", -75);
+        PlayerPrefs.SetInt("rangerCounter", -75);
+        PlayerPrefs.SetInt("EnemyCounter", -75);
+
+        PlayerScript.Instance.Reset0();
+
+        Application.Quit();
+    }
 }

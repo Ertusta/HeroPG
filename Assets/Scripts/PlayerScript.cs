@@ -451,7 +451,20 @@ public class PlayerScript : MonoBehaviour
     }
 
 
-
+    public void Reset0()
+    {
+        PlayerPrefs.SetFloat("maxHealth", 100);
+        PlayerPrefs.SetInt("damage", 20);
+        PlayerPrefs.SetInt("money",0);
+        PlayerPrefs.SetInt("potion", 0);
+        PlayerPrefs.SetInt("bladeLevel", 1);
+        PlayerPrefs.SetInt("armorLevel", 1);
+        PlayerPrefs.SetFloat("exp", 0);
+        PlayerPrefs.SetInt("skillPoint", 0);
+        PlayerPrefs.SetInt("damagePoint", 0);
+        PlayerPrefs.SetInt("speedPoint", 0);
+        PlayerPrefs.SetInt("healthPoint", 0);
+    }
 
 
 }
