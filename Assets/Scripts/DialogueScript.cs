@@ -10,6 +10,7 @@ public class DialogueScript : MonoBehaviour
     public GameObject Panel;
     public GameObject SmithPanel;
     public GameObject SkillTable;
+    public GameObject Menu;
 
     public TMPro.TextMeshProUGUI Text;
     public TMPro.TextMeshProUGUI Name;
@@ -389,12 +390,14 @@ public class DialogueScript : MonoBehaviour
             Panel.SetActive(false);
             PlayerScript.Instance.canMove = true;
             guard = 1;
+            RedPortal.SetActive(true);
         }
         else if (guard == 3)
         {
             Text.text = "Again? GO GO";
             GuardText.text = "Oki doki";
             guard = 4;
+            RedPortal.SetActive(true);
         }
         else if (guard == 4)
         {
@@ -402,6 +405,7 @@ public class DialogueScript : MonoBehaviour
             Panel.SetActive(false);
             PlayerScript.Instance.canMove = true;
             guard = 3;
+            RedPortal.SetActive(true);
 
         }
 
@@ -596,6 +600,24 @@ public class DialogueScript : MonoBehaviour
     }
 
 
+    public void Quit()
+    {   
+        Save();
+        PlayerScript.Instance.Save();
+        Application.Quit();
+       
+    }
+
+    public void Resume()
+    {
+        Menu.SetActive(false);
+    }
+
+    public void Menus()
+    {
+        Menu.SetActive(true);
+
+    }
 
 
 }

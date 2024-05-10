@@ -1,4 +1,4 @@
-using Microsoft.Unity.VisualStudio.Editor;
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -62,6 +62,11 @@ public class PlayerScript : MonoBehaviour
         Instance = this;
 
         Maim.Play();
+
+        Load();
+        DialogueScript.Instance.Load();
+
+
 
     }
 
@@ -187,6 +192,10 @@ public class PlayerScript : MonoBehaviour
                         Enemy.Stop();
                        Maim.Play();
 
+                        Save();
+                        DialogueScript.Instance.Save();
+
+
                         agent.enabled = false;
                         gameObject.transform.position = new Vector3(475, 0, 475);
                         agent.enabled = true;
@@ -303,6 +312,9 @@ public class PlayerScript : MonoBehaviour
         Enemy.Stop();
         Deatho.Play();
         Maim.Play();
+
+        Save();
+        DialogueScript.Instance.Save();
 
         Health = 100;
         HealthBar.fillAmount = 100;
